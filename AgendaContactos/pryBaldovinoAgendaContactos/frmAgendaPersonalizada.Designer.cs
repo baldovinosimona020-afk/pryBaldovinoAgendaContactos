@@ -46,6 +46,15 @@
             cboBuscar = new ComboBox();
             txtBuscar = new TextBox();
             btnBuscar = new Button();
+            dgvContactos = new DataGridView();
+            btnExportarvCard = new Button();
+            btnExportarCVS = new Button();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            Teléfono = new DataGridViewTextBoxColumn();
+            Correo = new DataGridViewTextBoxColumn();
+            Categoría = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvContactos).BeginInit();
             SuspendLayout();
             // 
             // lblDatos
@@ -72,7 +81,7 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApellido.Location = new Point(450, 92);
+            lblApellido.Location = new Point(401, 91);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(76, 23);
             lblApellido.TabIndex = 2;
@@ -87,7 +96,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(549, 91);
+            txtApellido.Location = new Point(491, 94);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(206, 27);
             txtApellido.TabIndex = 4;
@@ -114,7 +123,7 @@
             // 
             lblCorreo.AutoSize = true;
             lblCorreo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCorreo.Location = new Point(450, 171);
+            lblCorreo.Location = new Point(401, 175);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(66, 23);
             lblCorreo.TabIndex = 7;
@@ -122,7 +131,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(549, 171);
+            txtCorreo.Location = new Point(491, 174);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(206, 27);
             txtCorreo.TabIndex = 8;
@@ -150,7 +159,7 @@
             // 
             btnAgregar.BackColor = SystemColors.AppWorkspace;
             btnAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.Location = new Point(630, 318);
+            btnAgregar.Location = new Point(572, 317);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(125, 35);
             btnAgregar.TabIndex = 12;
@@ -162,7 +171,7 @@
             btnEliminar.BackColor = SystemColors.AppWorkspace;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.Black;
-            btnEliminar.Location = new Point(304, 317);
+            btnEliminar.Location = new Point(294, 317);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(125, 36);
             btnEliminar.TabIndex = 14;
@@ -173,7 +182,7 @@
             // 
             btnEditar.BackColor = SystemColors.AppWorkspace;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditar.Location = new Point(468, 317);
+            btnEditar.Location = new Point(435, 317);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(125, 36);
             btnEditar.TabIndex = 15;
@@ -201,7 +210,7 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(387, 409);
+            txtBuscar.Location = new Point(135, 461);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(206, 27);
             txtBuscar.TabIndex = 18;
@@ -210,18 +219,90 @@
             // 
             btnBuscar.BackColor = SystemColors.AppWorkspace;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(630, 404);
+            btnBuscar.Location = new Point(572, 453);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(125, 35);
             btnBuscar.TabIndex = 19;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // dgvContactos
+            // 
+            dgvContactos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvContactos.Columns.AddRange(new DataGridViewColumn[] { Nombre, Apellido, Teléfono, Correo, Categoría });
+            dgvContactos.Location = new Point(30, 553);
+            dgvContactos.Name = "dgvContactos";
+            dgvContactos.RowHeadersWidth = 51;
+            dgvContactos.Size = new Size(667, 127);
+            dgvContactos.TabIndex = 20;
+            // 
+            // btnExportarvCard
+            // 
+            btnExportarvCard.BackColor = SystemColors.AppWorkspace;
+            btnExportarvCard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportarvCard.Location = new Point(368, 714);
+            btnExportarvCard.Name = "btnExportarvCard";
+            btnExportarvCard.Size = new Size(214, 35);
+            btnExportarvCard.TabIndex = 21;
+            btnExportarvCard.Text = "Exportar vCard";
+            btnExportarvCard.UseVisualStyleBackColor = false;
+            btnExportarvCard.Click += this.btnExportarvCard_Click;
+            // 
+            // btnExportarCVS
+            // 
+            btnExportarCVS.BackColor = SystemColors.AppWorkspace;
+            btnExportarCVS.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportarCVS.Location = new Point(109, 714);
+            btnExportarCVS.Name = "btnExportarCVS";
+            btnExportarCVS.Size = new Size(214, 35);
+            btnExportarCVS.TabIndex = 22;
+            btnExportarCVS.Text = "Exportar CVS";
+            btnExportarCVS.UseVisualStyleBackColor = false;
+            btnExportarCVS.Click += btnExportarCVS_Click;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.Width = 125;
+            // 
+            // Apellido
+            // 
+            Apellido.HeaderText = "Apellido";
+            Apellido.MinimumWidth = 6;
+            Apellido.Name = "Apellido";
+            Apellido.Width = 125;
+            // 
+            // Teléfono
+            // 
+            Teléfono.HeaderText = "Teléfono";
+            Teléfono.MinimumWidth = 6;
+            Teléfono.Name = "Teléfono";
+            Teléfono.Width = 125;
+            // 
+            // Correo
+            // 
+            Correo.HeaderText = "Correo";
+            Correo.MinimumWidth = 6;
+            Correo.Name = "Correo";
+            Correo.Width = 125;
+            // 
+            // Categoría
+            // 
+            Categoría.HeaderText = "Categoría";
+            Categoría.MinimumWidth = 6;
+            Categoría.Name = "Categoría";
+            Categoría.Width = 125;
+            // 
             // frmAgendaPersonalizada
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(837, 618);
+            ClientSize = new Size(720, 765);
+            Controls.Add(btnExportarCVS);
+            Controls.Add(btnExportarvCard);
+            Controls.Add(dgvContactos);
             Controls.Add(btnBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(cboBuscar);
@@ -242,6 +323,7 @@
             Controls.Add(lblDatos);
             Name = "frmAgendaPersonalizada";
             Text = "Agenda de contactos personalizada";
+            ((System.ComponentModel.ISupportInitialize)dgvContactos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,5 +348,13 @@
         private ComboBox cboBuscar;
         private TextBox txtBuscar;
         private Button btnBuscar;
+        private DataGridView dgvContactos;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn Teléfono;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Categoría;
+        private Button btnExportarvCard;
+        private Button btnExportarCVS;
     }
 }

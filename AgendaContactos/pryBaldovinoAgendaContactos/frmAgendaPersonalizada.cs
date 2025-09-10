@@ -16,5 +16,10 @@ namespace pryBaldovinoAgendaContactos
         {
             InitializeComponent();
         }
+
+        private void btnExportarCVS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
