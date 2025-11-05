@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgendaPersonalizada));
             lblDatos = new Label();
             lblNombre = new Label();
             lblApellido = new Label();
@@ -47,13 +48,13 @@
             txtBuscar = new TextBox();
             btnBuscar = new Button();
             dgvContactos = new DataGridView();
-            btnExportarvCard = new Button();
-            btnExportarCVS = new Button();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Teléfono = new DataGridViewTextBoxColumn();
             Correo = new DataGridViewTextBoxColumn();
             Categoría = new DataGridViewTextBoxColumn();
+            btnExportarvCard = new Button();
+            btnExportarCVS = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvContactos).BeginInit();
             SuspendLayout();
             // 
@@ -236,30 +237,6 @@
             dgvContactos.Size = new Size(667, 127);
             dgvContactos.TabIndex = 20;
             // 
-            // btnExportarvCard
-            // 
-            btnExportarvCard.BackColor = SystemColors.AppWorkspace;
-            btnExportarvCard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExportarvCard.Location = new Point(368, 714);
-            btnExportarvCard.Name = "btnExportarvCard";
-            btnExportarvCard.Size = new Size(214, 35);
-            btnExportarvCard.TabIndex = 21;
-            btnExportarvCard.Text = "Exportar vCard";
-            btnExportarvCard.UseVisualStyleBackColor = false;
-            btnExportarvCard.Click += this.btnExportarvCard_Click;
-            // 
-            // btnExportarCVS
-            // 
-            btnExportarCVS.BackColor = SystemColors.AppWorkspace;
-            btnExportarCVS.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExportarCVS.Location = new Point(109, 714);
-            btnExportarCVS.Name = "btnExportarCVS";
-            btnExportarCVS.Size = new Size(214, 35);
-            btnExportarCVS.TabIndex = 22;
-            btnExportarCVS.Text = "Exportar CVS";
-            btnExportarCVS.UseVisualStyleBackColor = false;
-            btnExportarCVS.Click += btnExportarCVS_Click;
-            // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
@@ -295,6 +272,29 @@
             Categoría.Name = "Categoría";
             Categoría.Width = 125;
             // 
+            // btnExportarvCard
+            // 
+            btnExportarvCard.BackColor = SystemColors.AppWorkspace;
+            btnExportarvCard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportarvCard.Location = new Point(368, 714);
+            btnExportarvCard.Name = "btnExportarvCard";
+            btnExportarvCard.Size = new Size(214, 35);
+            btnExportarvCard.TabIndex = 21;
+            btnExportarvCard.Text = "Exportar vCard";
+            btnExportarvCard.UseVisualStyleBackColor = false;
+            // 
+            // btnExportarCVS
+            // 
+            btnExportarCVS.BackColor = SystemColors.AppWorkspace;
+            btnExportarCVS.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExportarCVS.Location = new Point(109, 714);
+            btnExportarCVS.Name = "btnExportarCVS";
+            btnExportarCVS.Size = new Size(214, 35);
+            btnExportarCVS.TabIndex = 22;
+            btnExportarCVS.Text = "Exportar CVS";
+            btnExportarCVS.UseVisualStyleBackColor = false;
+            btnExportarCVS.Click += btnExportarCVS_Click;
+            // 
             // frmAgendaPersonalizada
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -321,7 +321,11 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Controls.Add(lblDatos);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "frmAgendaPersonalizada";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agenda de contactos personalizada";
             ((System.ComponentModel.ISupportInitialize)dgvContactos).EndInit();
             ResumeLayout(false);
